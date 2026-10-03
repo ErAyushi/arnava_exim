@@ -1,0 +1,141 @@
+{
+  "project_name": "Arnava Exim - Premium B2B Import-Export Platform",
+  "company_details": {
+    "name": "Arnava Exim",
+    "location": "Ahmedabad, Gujarat, India",
+    "domain": "www.arnavaexim.com",
+    "email": "Sales@arnavaexim.com",
+    "iec": "PLHPS3426M",
+    "certifications": ["MSME Registered", "India-based Exporter"],
+    "primary_product_line": "Psyllium Husk and Psyllium Husk Products"
+  },
+  "brand_identity": {
+    "art_direction": "Swiss-International Precision meets Modern Agricultural Commodity Export",
+    "archetype": "Architectural Trust & Global Supply Chain Reliability",
+    "logo_concept": {
+      "svg_code": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' class='w-10 h-10'><path d='M20 75L50 20L80 75H64L50 48L36 75H20Z' fill='#0B192C'/><path d='M36 75L50 48L64 75' stroke='#10B981' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/><circle cx='50' cy='32' r='4' fill='#10B981'/></svg>",
+      "favicon_svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none'><rect width='32' height='32' rx='6' fill='#0B192C'/><path d='M7 24L16 7L25 24H20L16 15L12 24H7Z' fill='#FFFFFF'/><path d='M16 15L20 24' stroke='#10B981' stroke-width='2'/><circle cx='16' cy='11' r='1.5' fill='#10B981'/></svg>",
+      "description": "Geometric A-mark inspired by maritime compass points and grain stalks, symbolizing global export precision and agricultural origins."
+    }
+  },
+  "colors": {
+    "palette": {
+      "primary_navy": "#0B192C",
+      "deep_ocean_blue": "#1E3E62",
+      "slate_blue": "#3B5249",
+      "emerald_accent": "#10B981",
+      "sage_green": "#059669",
+      "forest_glow": "#15803D",
+      "light_background": "#F8FAFC",
+      "soft_border": "#E2E8F0",
+      "crisp_white": "#FFFFFF",
+      "charcoal_text": "#0F172A",
+      "muted_text": "#64748B"
+    },
+    "theme_rules": {
+      "mode": "Light mode primary with deep ocean navy structural contrasts",
+      "hero_overlay": "bg-gradient-to-r from-[#0B192C]/90 via-[#0B192C]/70 to-transparent",
+      "header_background": "bg-white/80 backdrop-blur-xl border-b border-slate-200/80 shadow-sm z-50",
+      "card_surface": "bg-white border border-slate-200 hover:border-emerald-500/50 hover:shadow-xl transition-all duration-300",
+      "cta_button": "bg-[#0B192C] text-white hover:bg-[#10B981] hover:text-white transition-all duration-300 shadow-md font-semibold"
+    }
+  },
+  "typography": {
+    "font_families": {
+      "heading": "Plus Jakarta Sans, sans-serif",
+      "subheading": "Outfit, sans-serif",
+      "body": "Plus Jakarta Sans, sans-serif",
+      "mono_specs": "JetBrains Mono, monospace"
+    },
+    "scale": {
+      "hero_h1": "text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1]",
+      "section_h2": "text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#0B192C]",
+      "card_h3": "text-xl sm:text-2xl font-semibold text-[#0B192C]",
+      "body_lg": "text-lg text-slate-6xl leading-relaxed",
+      "body_base": "text-base text-slate-600 leading-relaxed",
+      "table_mono": "text-xs font-mono uppercase tracking-widest text-slate-500"
+    }
+  },
+  "curated_media_urls": {
+    "hero_banner": "https://images.unsplash.com/photo-1606185540834-d6e7483ee1a4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNTl8MHwxfHNlYXJjaHwxfHxjb250YWluZXIlMjBjYXJnbyUyMHNoaXAlMjBwb3J0JTIwaW50ZXJuYXRpb25hbCUyMGV4cG9ydCUyMHNoaXBwaW5nfGVufDB8fHx8MTc5MDg3ODA0MXww&ixlib=rb-4.1.0&q=85",
+    "ocean_freight_port": "https://images.unsplash.com/photo-1670121180530-cfcba4438038?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNTl8MHwxfHNlYXJjaHw0fHxjb250YWluZXIlMjBjYXJnbyUyMHNoaXAlMjBwb3J0JTIwaW50ZXJuYXRpb25hbCUyMGV4cG9ydCUyMHNoaXBwaW5nfGVufDB8fHx8MTc5MDg3ODA0MXww&ixlib=rb-4.1.0&q=85",
+    "aerial_vessel": "https://images.unsplash.com/photo-1613690399151-65ea69478674?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNTl8MHwxfHNlYXJjaHszfHxjb250YWluZXIlMjBjYXJnbyUyMHNoaXAlMjBwb3J0JTIwaW50ZXJuYXRpb25hbCUyMGV4cG9ydCUyMHNoaXBwaW5nfGVufDB8fHx8MTc5MDg3ODA0MXww&ixlib=rb-4.1.0&q=85",
+    "psyllium_products": {
+      "psyllium_husk": "https://images.unsplash.com/photo-1676619357571-b4f086f81299?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwxfHxwc3lsbGl1bSUyMGh1c2slMjBwbGFudCUyMGdyYWluJTIwc2VlZHMlMjBhZ3JpY3VsdHVyYWwlMjB0cmFkZXxlbnwwfHx8fDE3OTA4NzgwNDF8MA&ixlib=rb-4.1.0&q=85",
+      "psyllium_husk_powder": "https://images.pexels.com/photos/11789292/pexels-photo-11789292.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "psyllium_husk_95": "https://images.unsplash.com/photo-1645331465778-eb409d112198?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwyfHxwc3lsbGl1bSUyMGh1c2slMjBwbGFudCUyMGdyYWluJTIwc2VlZHMlMjBhZ3JpY3VsdHVyYWwlMjB0cmFkZXxlbnwwfHx8fDE3OTA4NzgwNDF8MA&ixlib=rb-4.1.0&q=85",
+      "psyllium_husk_99": "https://images.unsplash.com/photo-1755598603555-949ce8bb3b50?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHw0fHxwc3lsbGl1bSUyMGh1c2slMjBwbGFudCUyMGdyYWluJTIwc2VlZHMlMjBhZ3JpY3VsdHVyYWwlMjB0cmFkZXxlbnwwfHx8fDE3OTA4NzgwNDF8MA&ixlib=rb-4.1.0&q=85",
+      "psyllium_husk_powder_99": "https://images.pexels.com/photos/4055798/pexels-photo-4055798.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    "quality_lab_inspection": "https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NjV8MHwxfHNlYXJjaHw3fHxsYWJvcmF0b3J5JTIwcXVhbGl0eSUyMGluc3BlY3Rpb24lMjByZXNlYXJjaCUyMGZvb2QlMjBwcm9jZXNzaW5nJTIwdGVzdGluZ3xlbnwwfHx8fDE3OTA4NzgwNDh8MA&ixlib=rb-4.1.0&q=85",
+    "microscope_testing": "https://images.unsplash.com/photo-1511174511562-5f7f18b874f8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NjV8MHwxfHNlYXJjaHwxfHxsYWJvcmF0b3J5JTIwcXVhbGl0eSUyMGluc3BlY3Rpb24lMjByZXNlYXJjaCUyMGZvb2QlMjBwcm9jZXNzaW5nJTIwdGVzdGluZ3xlbnwwfHx8fDE3OTA4NzgwNDh8MA&ixlib=rb-4.1.0&q=85",
+    "factory_quality_control": "https://images.unsplash.com/photo-1556216555-becc1cbd8b23?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NjV8MHwxfHNlYXJjaHw0fHxsYWJvcmF0b3J5JTIwcXVhbGl0eSUyMGluc3BlY3Rpb24lMjByZXNlYXJjaCUyMGZvb2QlMjBwcm9jZXNzaW5nJTIwdGVzdGluZ3xlbnwwfHx8fDE3OTA4NzgwNDh8MA&ixlib=rb-4.1.0&q=85"
+  },
+  "layout_and_pages": {
+    "global_header": {
+      "logo": "ARNAVA EXIM mark + text",
+      "navigation": ["Home", "About Us", "Products", "Quality & Sourcing", "Export Process", "Global Markets", "Contact"],
+      "action_cta": "Send Inquiry",
+      "sticky_rule": "Header fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200"
+    },
+    "page_structure": {
+      "Home": [
+        "Kinetic Hero: Headline 'Connecting Quality Products with Global Markets' + CTAs ('Explore Products' / 'Send an Inquiry') + Trust Strip (India-based Exporter | B2B Supply | International Trade | Quality-Focused Sourcing)",
+        "Slow Editorial Marquee: 'PREMIUM PSYLLIUM HUSK • 99% PURITY GRADES • B2B EXPORT DIRECT FROM AHMEDABAD • APEDA & MSME REGISTERED • GLOBAL LOGISTICS NETWORK •'",
+        "Company Snapshot / B2B Export Capability Bento Grid",
+        "Featured Products Catalogue Preview (5 Psyllium variants)",
+        "6-Step Quality Assurance Visual Overview",
+        "Interactive Global Markets Map Visual (India highlighted as export hub)",
+        "Quick B2B Inquiry Form section"
+      ],
+      "About Us": [
+        "Company Profile: Ahmedabad, Gujarat export origin story",
+        "IEC Code PLHPS3426M & MSME Registration highlights",
+        "Export Commitment & Zero False Claims Pledge",
+        "Sourcing Excellence from Gujarat's agricultural belt"
+      ],
+      "Products": [
+        "Catalog Grid with 5 Cards: Psyllium Husk, Psyllium Husk Powder, Psyllium Husk 95%, Psyllium Husk 99%, Psyllium Husk Powder 99%",
+        "Card Features: Product image, Purity badge, Short description, 'Request Specification' modal trigger, 'Send Inquiry' pre-filled redirect button"
+      ],
+      "Product Details": [
+        "Dynamic Product Spec Sheet (/products/:productId)",
+        "Technical Table: Origin (Gujarat, India), Purity, Mesh Size, Moisture %, Ash %, Foreign Matter %, Packaging (25kg/50kg PP Bags / Custom), Shelf Life (24 Months), Documentation Availability, MOQ, Custom Specs ('Subject to buyer requirement')",
+        "Direct RFQ Form for specific product grade"
+      ],
+      "Quality & Sourcing": [
+        "6-Step Process Vertical Visual Timeline: Step 1 (Buyer Requirement) → Step 2 (Product Sourcing) → Step 3 (Specification Confirmation) → Step 4 (Quality/Documentation Review) → Step 5 (Packaging & Shipment Coordination) → Step 6 (International Delivery)"
+      ],
+      "Export Process": [
+        "6-Step B2B Export Flow Interactive Diagram: Step 1 (Buyer Inquiry) → Step 2 (Requirement & Specification Confirmation) → Step 3 (Quotation) → Step 4 (Sample/Documentation Coordination) → Step 5 (Order & Production/Sourcing) → Step 6 (Shipment & Export Documentation)"
+      ],
+      "Global Markets": [
+        "Serving Global B2B Markets section",
+        "Interactive World Map canvas/SVG with India (Ahmedabad hub) pulse effect and major shipping routes to Europe, Middle East, Asia",
+        "Export Port capability (Mundra, Kandla, Nhava Sheva)"
+      ],
+      "Contact": [
+        "Full B2B Inquiry Form (Full Name, Company Name, Business Email, Phone/WhatsApp, Country, Product Required, Required Purity, Required Quantity, Destination Port, Incoterm, Message)",
+        "Company Contact Details (Sales@arnavaexim.com, Ahmedabad, Gujarat, India)",
+        "Google Maps Embed Placeholder for Ahmedabad"
+      ]
+    }
+  },
+  "motion_and_interactions": {
+    "library": "framer-motion + lenis smooth scroll",
+    "stagger_reveal": "Masked line-by-line reveal for hero typography",
+    "scroll_reveal": "subtle fade-up with spring physics (duration: 0.6s, ease: [0.16, 1, 0.3, 1])",
+    "hover_effects": "cards tilt slightly or translate y-1 with soft emerald ring highlight"
+  },
+  "general_ui_ux_guidelines": {
+    "data_testid_rule": "ALL interactive buttons, inputs, links, tabs, forms, modals, table headers, and status badges MUST contain descriptive kebab-case data-testid attributes.",
+    "examples": {
+      "hero_inquiry_button": "data-testid=\"hero-send-inquiry-button\"",
+      "product_card": "data-testid=\"product-card-psyllium-99\"",
+      "spec_request_button": "data-testid=\"request-spec-button-psyllium-99\"",
+      "inquiry_form_email": "data-testid=\"inquiry-form-email-input\"",
+      "nav_link_about": "data-testid=\"nav-link-about-us\""
+    },
+    "accessibility": "Ensure contrast ratio >= 4.5:1 for body text and >= 3:1 for headings. Use proper ARIA attributes for modals and accordions."
+  }
+}
