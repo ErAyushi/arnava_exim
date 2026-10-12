@@ -21,8 +21,8 @@ export default function Footer() {
               {SITE.tagline}
             </p>
             <p className="mt-4 text-sm leading-relaxed text-slate-400">
-              India-based import-export company specializing in psyllium husk and
-              related psyllium products for international B2B buyers.
+              Global sourcing and import-export solutions connecting quality
+              products with international markets.
             </p>
           </div>
 

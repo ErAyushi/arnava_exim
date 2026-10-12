@@ -85,8 +85,10 @@ function Hero() {
         <MaskedLine delay={0.65}>
           <p className="mt-7 max-w-xl text-base leading-relaxed text-slate-300 md:text-lg">
             Arnava Exim is an India-based import-export company specializing in
-            psyllium husk and moringa powder products, serving international B2B
-            buyers with a focus on quality, reliability and professional trade support.
+            global sourcing and the supply of diverse products. We serve
+            international B2B markets with a focus on quality and reliable supply.
+            Our goal is to build long-term global partnerships through professional
+            trade support.
           </p>
         </MaskedLine>
         <motion.div
