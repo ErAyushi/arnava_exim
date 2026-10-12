@@ -3,9 +3,11 @@ import Seo from "@/components/Seo";
 import PageHero from "@/components/PageHero";
 import ProductCard from "@/components/ProductCard";
 import { Reveal } from "@/components/Reveal";
-import { PRODUCTS } from "@/data/products";
+import { useProducts } from "@/hooks/useProducts";
 
 export default function Products() {
+  const { products } = useProducts();
+
   return (
     <>
       <Seo
@@ -35,7 +37,7 @@ export default function Products() {
             </div>
           </Reveal>
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {PRODUCTS.map((p, i) => (
+            {products.map((p, i) => (
               <ProductCard key={p.slug} product={p} index={i} />
             ))}
           </div>

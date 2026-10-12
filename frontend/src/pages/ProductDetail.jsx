@@ -3,11 +3,11 @@ import { ArrowLeft, ArrowUpRight, Check, FileText, Send } from "lucide-react";
 import Seo from "@/components/Seo";
 import ProductCard from "@/components/ProductCard";
 import { Reveal } from "@/components/Reveal";
-import { PRODUCTS, productBySlug } from "@/data/products";
+import { useProducts } from "@/hooks/useProducts";
 
 const specRows = (product) => [
   ["Origin", "India"],
-  ["Purity", product.purity],
+  ["Purity", product.purity || "As per buyer requirement"],
   ["Mesh", "Subject to buyer requirement"],
   ["Moisture", "As per agreed specification — shared on inquiry"],
   ["Ash", "As per agreed specification — shared on inquiry"],
@@ -21,11 +21,15 @@ const specRows = (product) => [
 
 export default function ProductDetail() {
   const { slug } = useParams();
-  const product = productBySlug(slug);
+  const { products, loading } = useProducts();
+  const product = products.find((p) => p.slug === slug);
 
-  if (!product) return <Navigate to="/products" replace />;
+  if (!loading && !product) return <Navigate to="/products" replace />;
+  if (!product) {
+    return <div className="min-h-screen bg-[#F8FAFC]" data-testid="product-detail-loading" />;
+  }
 
-  const others = PRODUCTS.filter((p) => p.slug !== slug).slice(0, 3);
+  const others = products.filter((p) => p.slug !== slug).slice(0, 3);
 
   return (
     <>
@@ -48,9 +52,11 @@ export default function ProductDetail() {
             <h1 className="font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
               {product.name}
             </h1>
-            <span className="rounded-full bg-emerald-500/15 px-4 py-1.5 font-mono text-[11px] uppercase tracking-[0.2em] text-emerald-400">
-              {product.badge}
-            </span>
+            {product.badge && (
+              <span className="rounded-full bg-emerald-500/15 px-4 py-1.5 font-mono text-[11px] uppercase tracking-[0.2em] text-emerald-400">
+                {product.badge}
+              </span>
+            )}
           </div>
         </div>
       </section>
@@ -62,7 +68,7 @@ export default function ProductDetail() {
               <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl shadow-navy/5">
                 <img
                   src={product.image}
-                  alt={product.alt}
+                  alt={product.alt || product.name}
                   className="aspect-[4/3] w-full object-cover"
                   data-testid="product-detail-image"
                 />
@@ -89,20 +95,24 @@ export default function ProductDetail() {
 
           <div className="lg:col-span-3">
             <Reveal>
-              <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-emerald-600">
-                {product.tier}
-              </span>
+              {product.tier && (
+                <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-emerald-600">
+                  {product.tier}
+                </span>
+              )}
               <p className="mt-4 text-base leading-relaxed text-slate-600 md:text-lg">
                 {product.description}
               </p>
-              <ul className="mt-6 space-y-2.5">
-                {product.points.map((pt) => (
-                  <li key={pt} className="flex items-start gap-2.5 text-sm text-slate-700">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" />
-                    {pt}
-                  </li>
-                ))}
-              </ul>
+              {product.points && product.points.length > 0 && (
+                <ul className="mt-6 space-y-2.5">
+                  {product.points.map((pt) => (
+                    <li key={pt} className="flex items-start gap-2.5 text-sm text-slate-700">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" />
+                      {pt}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </Reveal>
 
             <Reveal delay={0.1}>

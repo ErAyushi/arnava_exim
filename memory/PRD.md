@@ -56,7 +56,8 @@ Build a modern, professional, premium B2B import-export company website for **Ar
 8. **Admin Dashboard (`/admin/login` & `/admin`)**:
    - JWT-authenticated admin portal for sales team
    - View, filter (All / New / Read), mark status, and delete buyer inquiries
-9. **Global Elements**:
+9. **Admin Product Manager (`/admin` → Products tab)**: add, edit, delete catalogue products (name, URL slug, tier, purity badge, image URL, SEO alt text, descriptions, key bullet points, sort order) — the storefront catalogue, home preview and product detail pages update instantly from MongoDB. 5 psyllium products seeded on startup when the collection is empty.
+10. **Global Elements**:
    - Sticky single-bar navigation with mobile slide-out menu
    - Footer with company credentials, quick links, and copyright
    - WhatsApp floating button & Lenis-powered back-to-top button

@@ -21,7 +21,7 @@ import MapVisual from "@/components/MapVisual";
 import ProductCard from "@/components/ProductCard";
 import InquiryForm from "@/components/InquiryForm";
 import { Eyebrow, MaskedLine, Reveal } from "@/components/Reveal";
-import { PRODUCTS } from "@/data/products";
+import { useProducts } from "@/hooks/useProducts";
 import { IMAGES, SITE } from "@/data/site";
 
 const TRUST = [
@@ -221,6 +221,8 @@ function Bento() {
 }
 
 function ProductsPreview() {
+  const { products } = useProducts();
+
   return (
     <section className="bg-white py-24" data-testid="featured-products-section">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
@@ -241,7 +243,7 @@ function ProductsPreview() {
           </Link>
         </Reveal>
         <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {PRODUCTS.map((p, i) => (
+          {products.slice(0, 5).map((p, i) => (
             <ProductCard key={p.slug} product={p} index={i} />
           ))}
           <Reveal delay={0.3} className="h-full">
