@@ -95,11 +95,21 @@ export default function ProductDetail() {
 
           <div className="lg:col-span-3">
             <Reveal>
-              {product.tier && (
-                <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-emerald-600">
-                  {product.tier}
-                </span>
-              )}
+              <div className="flex flex-wrap items-center gap-3">
+                {product.category && (
+                  <span
+                    data-testid="product-detail-category"
+                    className="rounded-full bg-navy/5 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-navy/60"
+                  >
+                    {product.category}
+                  </span>
+                )}
+                {product.tier && (
+                  <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-emerald-600">
+                    {product.tier}
+                  </span>
+                )}
+              </div>
               <p className="mt-4 text-base leading-relaxed text-slate-600 md:text-lg">
                 {product.description}
               </p>

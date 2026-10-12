@@ -6,8 +6,11 @@
     "domain": "www.arnavaexim.com",
     "email": "Sales@arnavaexim.com",
     "iec": "PLHPS3426M",
-    "certifications": ["MSME Registered", "India-based Exporter"],
-    "primary_product_line": "Psyllium Husk and Psyllium Husk Products"
+    "certifications": [
+      "MSME Registered",
+      "India-based Exporter"
+    ],
+    "primary_product_line": "Psyllium Husk & Moringa Powder Products"
   },
   "brand_identity": {
     "art_direction": "Swiss-International Precision meets Modern Agricultural Commodity Export",
@@ -67,6 +70,12 @@
       "psyllium_husk_99": "https://images.unsplash.com/photo-1755598603555-949ce8bb3b50?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHw0fHxwc3lsbGl1bSUyMGh1c2slMjBwbGFudCUyMGdyYWluJTIwc2VlZHMlMjBhZ3JpY3VsdHVyYWwlMjB0cmFkZXxlbnwwfHx8fDE3OTA4NzgwNDF8MA&ixlib=rb-4.1.0&q=85",
       "psyllium_husk_powder_99": "https://images.pexels.com/photos/4055798/pexels-photo-4055798.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
+    "moringa_products": {
+      "moringa_leaf_powder": "https://images.unsplash.com/photo-1704079698754-5e621edb610b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1Mjh8MHwxfHNlYXJjaHwxfHxtb3JpbmdhJTIwcG93ZGVyfGVufDB8fHx8MTc5MTc4MzIxN3ww&ixlib=rb-4.1.0&q=85",
+      "moringa_seed_powder": "https://images.unsplash.com/photo-1650494701391-daceb922ce9d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1Mjh8MHwxfHNlYXJjaHwyfHxtb3JpbmdhJTIwcG93ZGVyfGVufDB8fHx8MTc5MTc4MzIxN3ww&ixlib=rb-4.1.0&q=85",
+      "moringa_leaves": "https://images.unsplash.com/photo-1771643033515-0028fd03b708?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1Mjh8MHwxfHNlYXJjaHw0fHxtb3JpbmdhJTIwcG93ZGVyfGVufDB8fHx8MTc5MTc4MzIxN3ww&ixlib=rb-4.1.0&q=85",
+      "moringa_powder_bowl": "https://images.unsplash.com/photo-1708573106044-2bbefb3d9fc3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzV8MHwxfHNlYXJjaHwzfHxncmVlbiUyMGhlcmJhbCUyMHBvd2RlciUyMGJvd2wlMjBzcG9vbnxlbnwwfHx8fDE3OTE3ODMyMTZ8MA&ixlib=rb-4.1.0&q=85"
+    },
     "quality_lab_inspection": "https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NjV8MHwxfHNlYXJjaHw3fHxsYWJvcmF0b3J5JTIwcXVhbGl0eSUyMGluc3BlY3Rpb24lMjByZXNlYXJjaCUyMGZvb2QlMjBwcm9jZXNzaW5nJTIwdGVzdGluZ3xlbnwwfHx8fDE3OTA4NzgwNDh8MA&ixlib=rb-4.1.0&q=85",
     "microscope_testing": "https://images.unsplash.com/photo-1511174511562-5f7f18b874f8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NjV8MHwxfHNlYXJjaHwxfHxsYWJvcmF0b3J5JTIwcXVhbGl0eSUyMGluc3BlY3Rpb24lMjByZXNlYXJjaCUyMGZvb2QlMjBwcm9jZXNzaW5nJTIwdGVzdGluZ3xlbnwwfHx8fDE3OTA4NzgwNDh8MA&ixlib=rb-4.1.0&q=85",
     "factory_quality_control": "https://images.unsplash.com/photo-1556216555-becc1cbd8b23?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NjV8MHwxfHNlYXJjaHw0fHxsYWJvcmF0b3J5JTIwcXVhbGl0eSUyMGluc3BlY3Rpb24lMjByZXNlYXJjaCUyMGZvb2QlMjBwcm9jZXNzaW5nJTIwdGVzdGluZ3xlbnwwfHx8fDE3OTA4NzgwNDh8MA&ixlib=rb-4.1.0&q=85"
@@ -74,16 +83,24 @@
   "layout_and_pages": {
     "global_header": {
       "logo": "ARNAVA EXIM mark + text",
-      "navigation": ["Home", "About Us", "Products", "Quality & Sourcing", "Export Process", "Global Markets", "Contact"],
+      "navigation": [
+        "Home",
+        "About Us",
+        "Products",
+        "Quality & Sourcing",
+        "Export Process",
+        "Global Markets",
+        "Contact"
+      ],
       "action_cta": "Send Inquiry",
       "sticky_rule": "Header fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200"
     },
     "page_structure": {
       "Home": [
         "Kinetic Hero: Headline 'Connecting Quality Products with Global Markets' + CTAs ('Explore Products' / 'Send an Inquiry') + Trust Strip (India-based Exporter | B2B Supply | International Trade | Quality-Focused Sourcing)",
-        "Slow Editorial Marquee: 'PREMIUM PSYLLIUM HUSK • 99% PURITY GRADES • B2B EXPORT DIRECT FROM AHMEDABAD • APEDA & MSME REGISTERED • GLOBAL LOGISTICS NETWORK •'",
+        "Slow Editorial Marquee: 'PREMIUM PSYLLIUM HUSK & MORINGA POWDER • 99% PURITY GRADES • B2B EXPORT DIRECT FROM AHMEDABAD • APEDA & MSME REGISTERED • GLOBAL LOGISTICS NETWORK •'",
         "Company Snapshot / B2B Export Capability Bento Grid",
-        "Featured Products Catalogue Preview (5 Psyllium variants)",
+        "Featured Products Catalogue Preview (Psyllium & Moringa variants)",
         "6-Step Quality Assurance Visual Overview",
         "Interactive Global Markets Map Visual (India highlighted as export hub)",
         "Quick B2B Inquiry Form section"
@@ -95,7 +112,9 @@
         "Sourcing Excellence from Gujarat's agricultural belt"
       ],
       "Products": [
-        "Catalog Grid with 5 Cards: Psyllium Husk, Psyllium Husk Powder, Psyllium Husk 95%, Psyllium Husk 99%, Psyllium Husk Powder 99%",
+        "Catalog Grid with Category Filter Tabs (All, Psyllium Husk, Moringa Products)",
+        "Psyllium Cards: Psyllium Husk, Psyllium Husk Powder, Psyllium Husk 95%, Psyllium Husk 99%, Psyllium Husk Powder 99%",
+        "Moringa Cards: Moringa Leaf Powder, Moringa Seed Powder",
         "Card Features: Product image, Purity badge, Short description, 'Request Specification' modal trigger, 'Send Inquiry' pre-filled redirect button"
       ],
       "Product Details": [
@@ -131,8 +150,8 @@
     "data_testid_rule": "ALL interactive buttons, inputs, links, tabs, forms, modals, table headers, and status badges MUST contain descriptive kebab-case data-testid attributes.",
     "examples": {
       "hero_inquiry_button": "data-testid=\"hero-send-inquiry-button\"",
-      "product_card": "data-testid=\"product-card-psyllium-99\"",
-      "spec_request_button": "data-testid=\"request-spec-button-psyllium-99\"",
+      "product_card": "data-testid=\"product-card-moringa-leaf-powder\"",
+      "spec_request_button": "data-testid=\"request-spec-button-moringa-leaf-powder\"",
       "inquiry_form_email": "data-testid=\"inquiry-form-email-input\"",
       "nav_link_about": "data-testid=\"nav-link-about-us\""
     },

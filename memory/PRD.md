@@ -36,6 +36,8 @@ Build a modern, professional, premium B2B import-export company website for **Ar
    - IEC and MSME credentials display
    - 6 core export disciplines
 3. **Products Catalogue (`/products`)**:
+   - Category filter tabs (All Products / Psyllium Husk / Psyllium Husk Powder / Moringa Powder) with animated grid re-flow and per-category counts
+   - Product families: Psyllium Husk, Psyllium Husk Powder, Moringa Powder (categories editable per product in admin)
    - 5 Psyllium variants (Psyllium Husk, Psyllium Husk Powder, Psyllium Husk 95%, Psyllium Husk 99%, Psyllium Husk Powder 99%)
    - Purity badges, descriptions, "Request Specification" and "Send Inquiry" buttons
    - Prominent notice on buyer-specific specifications

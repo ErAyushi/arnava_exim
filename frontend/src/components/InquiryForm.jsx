@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import axios from "axios";
 import { Loader2, Send } from "lucide-react";
 import { toast } from "@/components/ui/sonner";
@@ -12,16 +12,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { API } from "@/data/site";
+import { useProducts } from "@/hooks/useProducts";
 
-const PRODUCT_OPTIONS = [
-  "Psyllium Husk",
-  "Psyllium Husk Powder",
-  "Psyllium Husk 95%",
-  "Psyllium Husk 99%",
-  "Psyllium Husk Powder 99%",
-  "Other Psyllium Product",
-  "Other Product",
-];
 const PURITY_OPTIONS = ["95%", "98%", "99%", "Custom / Other"];
 const INCOTERM_OPTIONS = ["EXW", "FOB", "CFR", "CIF", "DAP", "DDP", "Not sure yet"];
 
@@ -49,6 +41,12 @@ export default function InquiryForm({
   formType = "inquiry",
   idPrefix = "inquiry",
 }) {
+  const { products } = useProducts();
+  const productOptions = useMemo(() => {
+    const names = products.map((p) => p.name);
+    return [...names, "Other Product"];
+  }, [products]);
+
   const [form, setForm] = useState({ ...EMPTY, product: defaultProduct, message: defaultMessage });
   const [sending, setSending] = useState(false);
 
@@ -111,7 +109,7 @@ export default function InquiryForm({
             <SelectValue placeholder="Select a product" />
           </SelectTrigger>
           <SelectContent>
-            {PRODUCT_OPTIONS.map((p) => (
+            {productOptions.map((p) => (
               <SelectItem key={p} value={p} data-testid={`${idPrefix}-product-option-${p.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
                 {p}
               </SelectItem>

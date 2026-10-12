@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import axios from "axios";
 import { Loader2, PackageOpen, Pencil, Plus, Save, Trash2, X } from "lucide-react";
 import { toast } from "@/components/ui/sonner";
@@ -9,6 +9,7 @@ import { API } from "@/data/site";
 const EMPTY = {
   name: "",
   slug: "",
+  category: "",
   tier: "",
   badge: "",
   purity: "",
@@ -29,6 +30,11 @@ export default function ProductsManager({ authed }) {
   const [editing, setEditing] = useState(null);
   const [form, setForm] = useState(EMPTY);
   const [saving, setSaving] = useState(false);
+
+  const existingCategories = useMemo(
+    () => [...new Set(products.map((p) => (p.category || "").trim()).filter(Boolean))],
+    [products]
+  );
 
   const load = async () => {
     const res = await axios.get(`${API}/products`);
@@ -51,7 +57,7 @@ export default function ProductsManager({ authed }) {
     setForm((f) => ({ ...f, [key]: e && e.target ? e.target.value : e }));
 
   const startNew = () => {
-    setForm({ ...EMPTY, order: (products.length + 1) * 1 });
+    setForm({ ...EMPTY, order: products.length + 1 });
     setEditing("new");
   };
 
@@ -59,6 +65,7 @@ export default function ProductsManager({ authed }) {
     setForm({
       name: p.name,
       slug: p.slug,
+      category: p.category || "",
       tier: p.tier || "",
       badge: p.badge || "",
       purity: p.purity || "",
@@ -82,6 +89,7 @@ export default function ProductsManager({ authed }) {
     const body = {
       name: form.name.trim(),
       slug: form.slug.trim(),
+      category: form.category.trim(),
       tier: form.tier.trim(),
       badge: form.badge.trim(),
       purity: form.purity.trim(),
@@ -165,13 +173,24 @@ export default function ProductsManager({ authed }) {
           <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div>
               <label className={labelCls}>Product Name *</label>
-              <Input value={form.name} onChange={set("name")} required placeholder="e.g. Psyllium Husk 98%"
+              <Input value={form.name} onChange={set("name")} required placeholder="e.g. Moringa Leaf Powder"
                 data-testid="product-form-name-input" className={fieldCls} />
             </div>
             <div>
               <label className={labelCls}>URL Slug (auto if empty)</label>
-              <Input value={form.slug} onChange={set("slug")} placeholder="e.g. psyllium-husk-98"
+              <Input value={form.slug} onChange={set("slug")} placeholder="e.g. moringa-leaf-powder"
                 data-testid="product-form-slug-input" className={fieldCls} />
+            </div>
+            <div>
+              <label className={labelCls}>Category (filter tab on Products page)</label>
+              <Input value={form.category} onChange={set("category")} list="category-suggestions"
+                placeholder="e.g. Psyllium Husk or Moringa Powder"
+                data-testid="product-form-category-input" className={fieldCls} />
+              <datalist id="category-suggestions">
+                {existingCategories.map((c) => (
+                  <option key={c} value={c} />
+                ))}
+              </datalist>
             </div>
             <div>
               <label className={labelCls}>Tier Label</label>
@@ -266,6 +285,11 @@ export default function ProductsManager({ authed }) {
                   {p.badge && (
                     <span className="rounded-full bg-emerald-100 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-widest text-emerald-700">
                       {p.badge}
+                    </span>
+                  )}
+                  {p.category && (
+                    <span className="rounded-full bg-navy/5 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-widest text-navy/60">
+                      {p.category}
                     </span>
                   )}
                 </div>

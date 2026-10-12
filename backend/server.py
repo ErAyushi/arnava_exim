@@ -183,6 +183,7 @@ class InquiryStatusUpdate(BaseModel):
 class ProductIn(BaseModel):
     name: str = Field(min_length=2, max_length=160)
     slug: Optional[str] = ""
+    category: Optional[str] = ""
     tier: Optional[str] = ""
     purity: Optional[str] = ""
     badge: Optional[str] = ""
@@ -233,6 +234,7 @@ def serialize_product(doc: dict) -> dict:
         "id": str(doc["_id"]),
         "name": doc.get("name", ""),
         "slug": doc.get("slug", ""),
+        "category": doc.get("category", ""),
         "tier": doc.get("tier", ""),
         "purity": doc.get("purity", ""),
         "badge": doc.get("badge", ""),
@@ -250,6 +252,7 @@ PRODUCT_SEED = [
     {
         "slug": "psyllium-husk",
         "name": "Psyllium Husk",
+        "category": "Psyllium Husk",
         "tier": "Classic Grade",
         "purity": "As per buyer requirement",
         "badge": "Conventional",
@@ -267,6 +270,7 @@ PRODUCT_SEED = [
     {
         "slug": "psyllium-husk-powder",
         "name": "Psyllium Husk Powder",
+        "category": "Psyllium Husk Powder",
         "tier": "Milled Grade",
         "purity": "As per buyer requirement",
         "badge": "Fine Powder",
@@ -284,6 +288,7 @@ PRODUCT_SEED = [
     {
         "slug": "psyllium-husk-95",
         "name": "Psyllium Husk 95%",
+        "category": "Psyllium Husk",
         "tier": "Select 95",
         "purity": "95%",
         "badge": "95% Purity",
@@ -301,6 +306,7 @@ PRODUCT_SEED = [
     {
         "slug": "psyllium-husk-99",
         "name": "Psyllium Husk 99%",
+        "category": "Psyllium Husk",
         "tier": "Prime 99",
         "purity": "99%",
         "badge": "99% Purity",
@@ -318,6 +324,7 @@ PRODUCT_SEED = [
     {
         "slug": "psyllium-husk-powder-99",
         "name": "Psyllium Husk Powder 99%",
+        "category": "Psyllium Husk Powder",
         "tier": "Prime 99 Milled",
         "purity": "99%",
         "badge": "99% Purity · Powder",
@@ -334,15 +341,76 @@ PRODUCT_SEED = [
     },
 ]
 
+MORINGA_SEED = [
+    {
+        "slug": "moringa-leaf-powder",
+        "name": "Moringa Leaf Powder",
+        "category": "Moringa Powder",
+        "tier": "Leaf Grade",
+        "purity": "As per buyer requirement",
+        "badge": "Moringa",
+        "image": "https://images.unsplash.com/photo-1704079698754-5e621edb610b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1Mjh8MHwxfHNlYXJjaHwxfHxtb3JpbmdhJTIwcG93ZGVyfGVufDB8fHx8MTc5MTc4MzIxN3ww&ixlib=rb-4.1.0&q=85",
+        "alt": "Moringa leaf powder — moringa powder exporter India, Arnava Exim",
+        "short": "Green moringa leaf powder milled from dried moringa leaves, supplied as per buyer specifications.",
+        "description": "Moringa leaf powder produced from dried moringa leaves and milled to buyer-specified mesh sizes. Sourced through trusted Indian supply partners for food, nutraceutical and wellness applications where applicable. Specifications and documentation are confirmed against buyer and destination-country requirements.",
+        "points": [
+            "Milled to buyer-specified mesh sizes",
+            "Bulk and customized packing as per buyer requirement",
+            "Documentation coordinated per destination requirements",
+        ],
+        "order": 6,
+    },
+    {
+        "slug": "moringa-seed-powder",
+        "name": "Moringa Seed Powder",
+        "category": "Moringa Powder",
+        "tier": "Seed Grade",
+        "purity": "As per buyer requirement",
+        "badge": "Moringa",
+        "image": "https://images.unsplash.com/photo-1650494701391-daceb922ce9d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1Mjh8MHwxfHNlYXJjaHwyfHxtb3JpbmdhJTIwcG93ZGVyfGVufDB8fHx8MTc5MTc4MzIxN3ww&ixlib=rb-4.1.0&q=85",
+        "alt": "Moringa seed powder — Indian moringa supplier Arnava Exim",
+        "short": "Moringa seed powder supplied to buyer-specified purity and mesh requirements.",
+        "description": "Moringa seed powder supplied according to buyer-specified purity and mesh requirements. Suitable for applications where applicable, with specifications, packaging and documentation coordinated to match buyer and destination-country requirements.",
+        "points": [
+            "Purity and mesh as per buyer specification",
+            "Custom specifications available on inquiry",
+            "Specification sheet shared before order confirmation",
+        ],
+        "order": 7,
+    },
+]
+
+CATEGORY_MIGRATION = {
+    "psyllium-husk": "Psyllium Husk",
+    "psyllium-husk-95": "Psyllium Husk",
+    "psyllium-husk-99": "Psyllium Husk",
+    "psyllium-husk-powder": "Psyllium Husk Powder",
+    "psyllium-husk-powder-99": "Psyllium Husk Powder",
+}
+
 
 async def seed_products() -> None:
     count = await db.products.count_documents({})
     if count > 0:
         return
     now = datetime.now(timezone.utc).isoformat()
-    for p in PRODUCT_SEED:
+    for p in PRODUCT_SEED + MORINGA_SEED:
         await db.products.insert_one({**p, "created_at": now})
-    logger.info("Seeded %d products", len(PRODUCT_SEED))
+    logger.info("Seeded %d products", len(PRODUCT_SEED) + len(MORINGA_SEED))
+
+
+async def migrate_products() -> None:
+    for slug, category in CATEGORY_MIGRATION.items():
+        await db.products.update_one(
+            {"slug": slug, "$or": [{"category": {"$exists": False}}, {"category": ""}]},
+            {"$set": {"category": category}},
+        )
+    now = datetime.now(timezone.utc).isoformat()
+    for p in MORINGA_SEED:
+        exists = await db.products.find_one({"slug": p["slug"]})
+        if not exists:
+            await db.products.insert_one({**p, "created_at": now})
+            logger.info("Added product: %s", p["slug"])
 
 
 @api_router.get("/")
@@ -522,6 +590,7 @@ async def startup():
     await db.products.create_index("slug", unique=True)
     await seed_admin()
     await seed_products()
+    await migrate_products()
 
 
 @app.on_event("shutdown")

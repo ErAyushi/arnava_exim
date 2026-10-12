@@ -4,13 +4,14 @@ import Seo from "@/components/Seo";
 import PageHero from "@/components/PageHero";
 import InquiryForm from "@/components/InquiryForm";
 import { Eyebrow, Reveal } from "@/components/Reveal";
-import { productBySlug } from "@/data/products";
+import { useProducts } from "@/hooks/useProducts";
 import { SITE } from "@/data/site";
 
 export default function Contact() {
   const [params] = useSearchParams();
+  const { products } = useProducts();
   const productParam = params.get("product");
-  const product = productParam ? productBySlug(productParam) : null;
+  const product = productParam ? products.find((p) => p.slug === productParam) : null;
   const isSpecRequest = params.get("request") === "spec";
 
   const defaultProduct = product ? product.name : "";
@@ -23,7 +24,7 @@ export default function Contact() {
     <>
       <Seo
         title="Contact | Send a B2B Inquiry — Arnava Exim, Ahmedabad India"
-        description="Contact Arnava Exim for psyllium husk export inquiries. Email Sales@arnavaexim.com or send a B2B inquiry with your product, purity, quantity and destination port requirements."
+        description="Contact Arnava Exim for psyllium husk and moringa powder export inquiries. Email Sales@arnavaexim.com or send a B2B inquiry with your product, purity, quantity and destination port requirements."
       />
       <PageHero
         eyebrow="Contact"
