@@ -10,6 +10,7 @@ Build a modern, professional, premium B2B import-export company website for **Ar
 - **Primary Product**: Psyllium Husk and Psyllium Husk Products
 - **Website**: www.arnavaexim.com
 - **Email**: Sales@arnavaexim.com
+- **WhatsApp**: Ayushi Soni +91 87805 51268 · Deep Soni +91 94275 16579
 - **IEC**: PLHPS3426M
 - **MSME**: Registered with MSME
 - **Rule**: Zero false claims. No invented factories, certifications, or statistics.

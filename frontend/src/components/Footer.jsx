@@ -76,18 +76,22 @@ export default function Footer() {
                   {SITE.website}
                 </a>
               </li>
-              <li>
-                <a
-                  href={SITE.whatsappLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-testid="footer-whatsapp-link"
-                  className="flex items-center gap-2.5 transition-colors hover:text-emerald-400"
-                >
-                  <MessageCircle className="h-4 w-4 shrink-0 text-emerald-400" />
-                  {SITE.whatsappDisplay}
-                </a>
-              </li>
+              {SITE.whatsappContacts.map((c, i) => (
+                <li key={c.name}>
+                  <a
+                    href={c.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-testid={`footer-whatsapp-link-${i + 1}`}
+                    className="flex items-center gap-2.5 transition-colors hover:text-emerald-400"
+                  >
+                    <MessageCircle className="h-4 w-4 shrink-0 text-emerald-400" />
+                    <span>
+                      {c.display} <span className="text-slate-500">· {c.name}</span>
+                    </span>
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 

@@ -56,26 +56,25 @@ export default function Contact() {
                       </span>
                     </a>
                   </li>
-                  <li>
-                    <a
-                      href={SITE.whatsappLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      data-testid="contact-whatsapp-cta"
-                      className="group flex items-center gap-4"
-                    >
-                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-emerald-400 transition-colors duration-300 group-hover:bg-emerald-500 group-hover:text-navy-950">
-                        <MessageCircle className="h-5 w-5" />
-                      </span>
-                      <span>
-                        <span className="block text-xs text-slate-400">WhatsApp</span>
-                        <span className="font-semibold text-white">{SITE.whatsappDisplay}</span>
-                        <span className="mt-0.5 block text-[11px] italic text-slate-500">
-                          Placeholder number — being updated shortly
+                  {SITE.whatsappContacts.map((c, i) => (
+                    <li key={c.name}>
+                      <a
+                        href={c.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-testid={`contact-whatsapp-cta-${i + 1}`}
+                        className="group flex items-center gap-4"
+                      >
+                        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-emerald-400 transition-colors duration-300 group-hover:bg-emerald-500 group-hover:text-navy-950">
+                          <MessageCircle className="h-5 w-5" />
                         </span>
-                      </span>
-                    </a>
-                  </li>
+                        <span>
+                          <span className="block text-xs text-slate-400">WhatsApp · {c.name}</span>
+                          <span className="font-semibold text-white">{c.display}</span>
+                        </span>
+                      </a>
+                    </li>
+                  ))}
                   <li className="flex items-center gap-4">
                     <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-emerald-400">
                       <MapPin className="h-5 w-5" />

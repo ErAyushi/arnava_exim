@@ -7,9 +7,12 @@ export const SITE = {
   location: "Ahmedabad, Gujarat, India",
   iec: "PLHPS3426M",
   msme: "MSME Registered",
-  // PLACEHOLDER — replace with the real business WhatsApp number.
-  whatsappDisplay: "+91 90000 00000",
-  whatsappLink: "https://wa.me/919000000000",
+  whatsappContacts: [
+    { name: "Ayushi Soni", display: "+91 87805 51268", link: "https://wa.me/918780551268" },
+    { name: "Deep Soni", display: "+91 94275 16579", link: "https://wa.me/919427516579" },
+  ],
+  whatsappDisplay: "+91 87805 51268",
+  whatsappLink: "https://wa.me/918780551268",
 };
 
 export const IMAGES = {
