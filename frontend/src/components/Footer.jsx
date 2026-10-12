@@ -79,7 +79,7 @@ export default function Footer() {
               {SITE.whatsappContacts.map((c, i) => (
                 <li key={c.name}>
                   <a
-                    href={c.link}
+                    href={`${c.link}?text=${encodeURIComponent("Hello Arnava Exim, I'd like to discuss a product requirement.")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     data-testid={`footer-whatsapp-link-${i + 1}`}

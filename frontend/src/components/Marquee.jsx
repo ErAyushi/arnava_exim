@@ -1,5 +1,6 @@
 const ITEMS = [
   "Premium Psyllium Husk",
+  "Premium Moringa Powder",
   "Purity Grades 95% & 99%",
   "B2B Export From India",
   "MSME Registered",

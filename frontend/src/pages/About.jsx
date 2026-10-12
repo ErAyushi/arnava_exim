@@ -27,12 +27,12 @@ export default function About() {
   return (
     <>
       <Seo
-        title="About Us | Arnava Exim — Psyllium Husk Exporter, Ahmedabad India"
-        description="Arnava Exim is an India-based import-export company from Ahmedabad, Gujarat, specializing in psyllium husk and related psyllium products for international B2B buyers. IEC PLHPS3426M, MSME Registered."
+        title="About Us | Arnava Exim — Psyllium Husk & Moringa Powder Exporter, Ahmedabad India"
+        description="Arnava Exim is an India-based import-export company from Ahmedabad, Gujarat, specializing in psyllium husk and moringa powder products for international B2B buyers. IEC PLHPS3426M, MSME Registered."
       />
       <PageHero
         eyebrow="About Us"
-        title="An India-based export partner for psyllium products."
+        title="An India-based export partner for psyllium and moringa."
         description="Arnava Exim connects quality Indian products with international markets — with a focus on professional sourcing, documentation and dependable trade support."
         image={IMAGES.port}
       />
@@ -48,15 +48,16 @@ export default function About() {
               <p>
                 Arnava Exim is an India-based import-export company focused on
                 connecting quality Indian products with international markets. We
-                specialize in psyllium husk and related psyllium products and work
+                specialize in psyllium husk and moringa powder products and work
                 with trusted sourcing partners to serve B2B buyers according to
                 their product and documentation requirements.
               </p>
               <p>
                 Based in Ahmedabad, Gujarat — at the heart of India's psyllium
-                growing and processing region — we work with importers,
-                distributors, wholesalers and manufacturers who value clear
-                communication, honest specifications and professional coordination.
+                growing and processing region, with sourcing networks for moringa
+                across India — we work with importers, distributors, wholesalers
+                and manufacturers who value clear communication, honest
+                specifications and professional coordination.
               </p>
               <p>
                 We present only what we can stand behind: no inflated claims, no

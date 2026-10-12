@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useRef } from "react";
+import { useMemo, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
   ArrowRight,
@@ -85,7 +85,7 @@ function Hero() {
         <MaskedLine delay={0.65}>
           <p className="mt-7 max-w-xl text-base leading-relaxed text-slate-300 md:text-lg">
             Arnava Exim is an India-based import-export company specializing in
-            psyllium husk and related psyllium products, serving international B2B
+            psyllium husk and moringa powder products, serving international B2B
             buyers with a focus on quality, reliability and professional trade support.
           </p>
         </MaskedLine>
@@ -166,7 +166,7 @@ function Bento() {
               <div className="relative p-7">
                 <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-emerald-400">About Arnava Exim</span>
                 <p className="mt-3 max-w-md font-display text-xl font-bold leading-snug text-white">
-                  India-based import-export company connecting quality Indian products with international markets.
+                  India-based import-export company connecting quality Indian psyllium and moringa products with international markets.
                 </p>
                 <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-400">
                   Our story <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -200,7 +200,7 @@ function Bento() {
               <ShieldCheck className="h-6 w-6 text-emerald-600" />
               <div>
                 <p className="font-display text-lg font-bold text-navy">Quality-Focused Sourcing</p>
-                <p className="mt-1 text-xs text-slate-500">Trusted sourcing partners across India's psyllium belt</p>
+                <p className="mt-1 text-xs text-slate-500">Trusted sourcing partners for psyllium and moringa across India</p>
               </div>
             </div>
           </Reveal>
@@ -223,14 +223,32 @@ function Bento() {
 function ProductsPreview() {
   const { products } = useProducts();
 
+  const preview = useMemo(() => {
+    const byCat = new Map();
+    products.forEach((p) => {
+      const c = (p.category || "Other").trim();
+      if (!byCat.has(c)) byCat.set(c, []);
+      byCat.get(c).push(p);
+    });
+    const buckets = [...byCat.values()].map((arr) => [...arr]);
+    const picks = [];
+    let i = 0;
+    while (picks.length < 5 && buckets.some((b) => b.length)) {
+      const b = buckets[i % buckets.length];
+      if (b.length) picks.push(b.shift());
+      i += 1;
+    }
+    return picks;
+  }, [products]);
+
   return (
     <section className="bg-white py-24" data-testid="featured-products-section">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <Reveal className="flex flex-wrap items-end justify-between gap-6">
           <div>
-            <Eyebrow>The Psyllium Collection</Eyebrow>
+            <Eyebrow>The Collection</Eyebrow>
             <h2 className="mt-4 font-display text-2xl font-bold tracking-tight text-navy sm:text-3xl lg:text-4xl">
-              Psyllium products, specified your way.
+              Psyllium and moringa, specified your way.
             </h2>
           </div>
           <Link
@@ -243,7 +261,7 @@ function ProductsPreview() {
           </Link>
         </Reveal>
         <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {products.slice(0, 5).map((p, i) => (
+          {preview.map((p, i) => (
             <ProductCard key={p.slug} product={p} index={i} />
           ))}
           <Reveal delay={0.3} className="h-full">
@@ -429,8 +447,8 @@ export default function Home() {
   return (
     <>
       <Seo
-        title="Psyllium Husk Exporter India | Arnava Exim — Ahmedabad, Gujarat"
-        description="Arnava Exim is an India-based import-export company specializing in psyllium husk and psyllium products for international B2B buyers. Quality-focused sourcing and professional export support."
+        title="Psyllium Husk & Moringa Powder Exporter India | Arnava Exim — Ahmedabad, Gujarat"
+        description="Arnava Exim is an India-based import-export company specializing in psyllium husk and moringa powder products for international B2B buyers. Quality-focused sourcing and professional export support."
       />
       <Hero />
       <Marquee />

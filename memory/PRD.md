@@ -66,6 +66,8 @@ Build a modern, professional, premium B2B import-export company website for **Ar
    - WhatsApp floating button & Lenis-powered back-to-top button
    - Full OpenGraph, meta titles and descriptions optimized for B2B keywords
 
+11. **Dual-range copy + WhatsApp chat picker**: hero, About and marquee present both psyllium and moringa ranges; the floating WhatsApp bubble opens a contact picker (Ayushi Soni / Deep Soni) whose chats open with a pre-filled message naming the product the buyer was viewing; footer and contact WhatsApp links also carry a pre-filled message.
+
 ## Prioritized Backlog
 - [ ] Connect production email provider (e.g. Resend) for real-time sales inbox alerts on new inquiries
 - [ ] Multi-lingual support (Arabic, German, Spanish, French) for non-English B2B buyers
